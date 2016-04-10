@@ -120,14 +120,8 @@ public class MyArrayList<E> implements List<E> {
 	@Override
 	public int indexOf(Object target) {
         for(int i = 0; i < size; i++){
-            //if target and the ith position in the array are
-            //both null then return i
-            
-            //else if the target is not null and equals the element
-            //in the ith positon in the array then return that ith positon
-            if(target == null && array[i] == null){
-                return i;
-            }else if(target != null && target.equals(array[i])){
+            //if target and array[i] are equal then return the index
+            if(equals(target, array[i])){
                 return i;
             }
         }
